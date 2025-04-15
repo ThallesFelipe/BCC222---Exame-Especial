@@ -7,3 +7,15 @@ instance Functor Arv where
   -- Caso 2: Nó. Aplica f ao valor 'x' e aplica recursivamente fmap f
   -- a cada subárvore na lista 'subtrees' usando map.
   fmap f (N x subtrees) = N (f x) (map (fmap f) subtrees)
+
+a1 :: Arv String
+a1 =
+  N
+    "maria"
+    [ N "anabela" [],
+      N "paula" [],
+      N "silva"
+        [ N "ivo" [],
+          N "pedro" []
+        ]
+    ]
